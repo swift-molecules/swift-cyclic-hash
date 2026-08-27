@@ -19,11 +19,19 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-cyclic.git",
+            url: "https://github.com/swift-atoms/swift-cyclic.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-atoms/swift-cardinal.git",
             branch: "main"
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-hash.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-atoms/swift-ordinal.git",
             branch: "main"
         ),
     ],
@@ -37,7 +45,13 @@ let package = Package(
         ),
         .testTarget(
             name: "Cyclic Hash Tests",
-            dependencies: ["Cyclic Hash"]
+            dependencies: [
+                "Cyclic Hash",
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Cyclic", package: "swift-cyclic"),
+                .product(name: "Hash", package: "swift-hash"),
+                .product(name: "Ordinal", package: "swift-ordinal"),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]
