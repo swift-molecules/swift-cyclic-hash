@@ -39,8 +39,13 @@ let package = Package(
         .target(
             name: "Cyclic Hash",
             dependencies: [
+                .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Cyclic", package: "swift-cyclic"),
-                .product(name: "Hash", package: "swift-hash"),
+                .product(name: "Cyclic Group", package: "swift-cyclic"),
+                .product(name: "Cyclic Group Static", package: "swift-cyclic"),
+                .product(name: "Cyclic Group Static Element", package: "swift-cyclic"),
+                .product(name: "Hash Protocol", package: "swift-hash"),
+                .product(name: "Ordinal", package: "swift-ordinal"),
             ]
         ),
         .testTarget(
@@ -49,7 +54,10 @@ let package = Package(
                 "Cyclic Hash",
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Cyclic", package: "swift-cyclic"),
-                .product(name: "Hash", package: "swift-hash"),
+                .product(name: "Cyclic Group", package: "swift-cyclic"),
+                .product(name: "Cyclic Group Static", package: "swift-cyclic"),
+                .product(name: "Cyclic Group Static Element", package: "swift-cyclic"),
+                .product(name: "Hash Protocol", package: "swift-hash"),
                 .product(name: "Ordinal", package: "swift-ordinal"),
             ]
         ),
